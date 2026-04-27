@@ -1,7 +1,7 @@
 name: Workflow 1
 on: [push]
 jobs:
-  build-node:
+  build_node:
     runs-on: ubuntu-latest
     container: node:25
     steps:
