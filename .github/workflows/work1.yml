@@ -1,8 +1,13 @@
 name: Workflow 1
 on: [push]
 jobs:
-  build:
+  build-node:
     runs-on: ubuntu-latest
+    container: node:25
     steps:
-      - name: print something
-        run: echo "Hello, World!"
+      - run: echo "Hello, World!"
+      - run: node --version
+      - run: npm --version
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: node app.js
