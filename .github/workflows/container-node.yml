@@ -1,0 +1,25 @@
+name: Node Container Action
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-node-app:
+    runs-on: ubuntu-latest
+    container: node:25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show container runtime versions
+        run: |
+          node --version
+          npm --version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run app inside Node container
+        run: node app.js
