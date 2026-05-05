@@ -5,5 +5,5 @@ console.log("inicio");
 console.log("la suma es " + (5 + 10));
 
 let fecha = moment().format("LL");
-console.log("la fecha es " + fecha);
+console.log("la fecha es ");
 console.log("fin");
